@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # for user authentication
 gem 'devise'
 
+gem 'pg'
+
 # invitation model integrated
 gem 'devise_invitable'
 
@@ -43,7 +45,6 @@ group :development, :test do
   gem 'letter_opener'
 
   # Use mysql as the database for Active Record
-  gem 'mysql2', '>= 0.3.18', '< 0.5'
 end
 
 group :development do
@@ -60,9 +61,6 @@ group :development do
   gem 'heroku'
 end
 
-group :heroku do
-  gem 'pg'
-end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
