@@ -14,10 +14,10 @@ ActiveAdmin.register_page "Dashboard" do
     #
     # columns do
     #   column do
-    #     panel "User List" do
+    #     panel "Recent Posts" do
     #       ul do
-    #         Users.recent(1).map do |user|
-    #           li link_to(user.email, user_root_path(user))
+    #         Post.recent(5).map do |post|
+    #           li link_to(post.title, admin_post_path(post))
     #         end
     #       end
     #     end

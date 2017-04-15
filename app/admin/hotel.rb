@@ -1,3 +1,7 @@
+
+
+
+
 # ActiveAdmin.register Hotel do
 #   permit_params :name, :state
 

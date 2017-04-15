@@ -1,13 +1,18 @@
 # silverspoon
 
-silverspoon is for the developers who wants to start Rails5 app. With the very basic requirements likes devise, admin panel, bootstrap4 and many more. It provides the basic integration of gems which is essential to starts the development of an application.
-like:- Devise authentication, Bootstrap4, active admin, exception notifier, letter opener, meta request, invite the users from admin panel.
+Originally forked from Silverspoon for a clean authentication and basic markup purposes, this project is now an example project for creating a basic hotel booking app.
 
-In this application i implement the **STI for the app users.** Patron is my parent model with common devise modules.
-* Admin: As name suggest admin controls the application, rather creating the users from admin panel sends the invitations to join the app.
-* User: application users with invitable, registerable and confirmable devise modules.
+The following tables will be created when you intialize and seed the database:
 
-This Rails 5 (5.0.0.1) app integrated:
+* Users
+* Admins
+* Hotels
+* RoomTypes
+* Rooms
+* Bookings
+
+
+This Rails 5 (5.0.0.1) app integrated: (this was taken from the SilverSpoon Project)
 
 * [Devise] - for authentication.
 
@@ -33,9 +38,11 @@ This Rails 5 (5.0.0.1) app integrated:
 
 * Rails 5 (5.0.0.1).
 
-* Mysql (you can change it :) )
+* PostgreSQL
 
 ## Setup
+
+0. Please fork the repo before you check it out.
 
 1. Do git checkout followed by git archive by
 
@@ -43,7 +50,9 @@ This Rails 5 (5.0.0.1) app integrated:
 $ git archive master | tar -x -C /somewhere/else
 ```
 2. cd into that directory.
-3. I am using mysql database for development. if you are using any other update your Gemfile for corresponding database adapter.
+
+3. I am using postgres database for development. if you are using any other update your Gemfile for corresponding database adapter.
+
 4. Update database configurations in database.yml.
 
 ```sh
