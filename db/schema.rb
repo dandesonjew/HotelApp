@@ -10,16 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414200642) do
+ActiveRecord::Schema.define(version: 20170415012553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "room_id"
+    t.integer  "patron_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patron_id"], name: "index_bookings_on_patron_id", using: :btree
+    t.index ["room_id"], name: "index_bookings_on_room_id", using: :btree
+  end
 
   create_table "hotels", force: :cascade do |t|
     t.string   "name"
     t.string   "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "city"
   end
 
   create_table "patrons", force: :cascade do |t|
@@ -56,4 +68,27 @@ ActiveRecord::Schema.define(version: 20170414200642) do
     t.index ["reset_password_token"], name: "index_patrons_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "room_types", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "max_people"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer  "hotel_id"
+    t.integer  "room_type_id"
+    t.boolean  "occupied"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.float    "price"
+    t.index ["hotel_id"], name: "index_rooms_on_hotel_id", using: :btree
+    t.index ["room_type_id"], name: "index_rooms_on_room_type_id", using: :btree
+  end
+
+  add_foreign_key "bookings", "patrons"
+  add_foreign_key "bookings", "rooms"
+  add_foreign_key "rooms", "hotels"
+  add_foreign_key "rooms", "room_types"
 end
