@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     puts "ActiveAdmin: #{e.class}: #{e}"
   end
   root to: "home#index"
-
+  get 'hotels/new' => 'hotels#new'
+  resources :hotels
 end

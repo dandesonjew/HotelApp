@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Hotels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hotels.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
