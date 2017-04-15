@@ -4,12 +4,12 @@ class ApplicationController < ActionController::Base
 
   def redirect_url
     return new_patron_session_path unless patron_signed_in?
+    redirect_to user_controller_show
     case current_patron
       when User
-        root_path
+        redirect_to user_controller_show
       when Admin
         root_path
     end
   end
-
 end

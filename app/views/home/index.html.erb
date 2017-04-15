@@ -5,5 +5,30 @@
     <p><%= link_to 'edit profile', edit_user_registration_path(current_user) %></p>
     <p><%= link_to 'logout', eval("destroy_#{current_user.type.downcase}_session_path"), method: :delete %></p>
 
+<!--     <div>
+    <h1>Bookings Table</h1>
+		 <table class="table-hover">
+		  <thead>
+		    <tr>
+		      <th>Room Id</th>
+		      <th>Start Date</th>
+		      <th>End Date</th>
+		      <th>Delete</th>
+		    </tr>
+		  </thead>
+    	 <tbody>
+			    <%# @bookings.each do |booking| %>
+			      <tr>
+			        <td><%#= booking.room %></td>
+			        <td><%#= booking.start_date %> </td>
+			        <td><%#= booking.end_date %></td>
+			        <td><%#= button_to 'Delete', booking_path(booking), :method => :delete, :confirm => 'Are you sure?' %></td>
+			      </tr>
+			    <%# end %>
+			  </tbody>
+			</table>
+    </div>
+    <%#= link_to 'New booking', new_booking_path %> -->
+
   </div>
 </div>
